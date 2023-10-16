@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+   
+
+
+      
+
+    
+
+
+            <!-- Form Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4">Ajouter un plan d'entrainnement :</h6>
+                              <a href="{{path('afficheS') }}"><button  type="button" class="btn btn-lg btn-primary m-2">Retour</button></a>
+                             {{form_start(f, { 'attr': {'novalidate': "novalidate"} })}}
+                            
+                             {{form_errors(f)}}
+                            <form>
+                                
+                            
+
+                                <label for="nom" class="form-label"></label>
+                                <div class="mb-3">
+                                    <label for="nom" class="form-label">Nom</label>
+                                    {{ form_widget(f.nom, { 'attr': {'class': "form-control"} }) }}
+                                    <div id="nomHelp" class="form-text">
+                                    {{form_errors(f.nom,  { 'attr': {'class': "text-danger"} })}}
+                                    </div>
+
+                    
+                                </div>
+                                <div class="mb-3">
+                                    <label for="description" class="form-label">description</label>
+                                  
+                                      {{ form_widget(f.description, { 'attr': {'class': "form-control"} }) }}
+                                    <div id="prenomHelp" class="form-text">
+                                    {{form_errors(f.description)}}
+                                    </div>
+                                </div><div class="mb-3">
+                                    <label for="nombre_de_seances" class="form-label">nombre_de_seances</label>
+                                         {{ form_widget(f.nombre_de_seances, { 'attr': {'class': "form-control",} }) }}
+                                    <div id="nombre_de_seances" class="form-text">
+                                    {{form_errors(f.nombre_de_seances)}}
+                                    </div>
+                                
+                                
+                                
+                               
+                                
+                                {{ form_widget(f.save, { 'attr': {'class': "btn btn-primary"} }) }}
+                            </form>
+                            {{ form_rest(f) }}
+                             {{form_end(f)}}
+                            
+                        </div>
+                        
+                    </div>
+                 
+
+
+       
+  
+
+{% endblock %}

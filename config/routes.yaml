@@ -1,0 +1,8 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+coach_upload_image:
+    path: '/coach/upload-image'
+    methods: ['POST']
+    controller: App\Controller\CoachController::uploadImage

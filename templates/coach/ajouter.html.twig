@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+   
+
+
+      
+
+    
+
+
+            <!-- Form Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4">Ajouter les informations de coach</h6>
+                              <a href="{{path('afficheS') }}"><button  type="button" class="btn btn-lg btn-primary m-2">Retour</button></a>
+                             {{form_start(f, { 'attr': {'novalidate': "novalidate"} })}}
+                            
+                             {{form_errors(f)}}
+                            <form>
+                                
+                            <div class="mb-3">
+                                    <label for="nom" class="form-label">Nom</label>
+                                    {{ form_widget(f.Nom, { 'attr': {'class': "form-control"} }) }}
+                                    <div id="nomHelp" class="form-text">
+                                        {{form_errors(f.Nom,  { 'attr': {'class': "text-danger"} })}}
+                                    </div>
+
+                    
+                                </div>
+                                <div class="mb-3">
+                                    <label for="prenom" class="form-label">Prenom</label>
+                                  
+                                      {{ form_widget(f.Prenom, { 'attr': {'class': "form-control"} }) }}
+                                    <div id="prenomHelp" class="form-text">
+                                    {{form_errors(f.Prenom)}}
+                                    </div>
+                                </div><div class="mb-3">
+                                    <label for="Age" class="form-label">Age</label>
+                                         {{ form_widget(f.Age, { 'attr': {'class': "form-control",} }) }}
+                                    <div id="age" class="form-text">
+                                    {{form_errors(f.Age)}}
+                                    </div>
+                                </div><div class="mb-3">
+                                    <label for="specialite" class="form-label">Spécialité</label>
+                                         {{ form_widget(f.specialite, { 'attr': {'class': "form-control",} }) }}
+                                    <div id="age" class="form-text">
+                                    {{form_errors(f.specialite)}}
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Adresse email</label>
+                                   {{ form_widget(f.email, { 'attr': {'class': "form-control"} }) }}
+                                    <div id="email" class="form-text">
+                                    {{form_errors(f.email)}}
+                                    
+                                    </div>
+                                </div>
+                                
+                               
+                                
+                                {{ form_widget(f.save, { 'attr': {'class': "btn btn-primary"} }) }}
+                            </form>
+                            {{ form_rest(f) }}
+                             {{form_end(f)}}
+                            
+                        </div>
+                        
+                    </div>
+                 
+
+
+       
+  
+
+{% endblock %}

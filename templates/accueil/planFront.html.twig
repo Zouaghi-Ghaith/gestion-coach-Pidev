@@ -1,0 +1,57 @@
+
+
+
+    {% extends 'base1.html.twig' %}
+{% block body1 %}{% endblock  %}
+{% block body2 %}{% endblock  %}
+{% block body %}{% endblock  %}
+
+{% block coaches %}
+<section class="section-98 section-md-110 novi-background" data-preset='{"title":"Team","category":"content, team","reload":false,"id":"team"}'>
+    
+    <div id="google_translate_element" style="margin-left: 1000px;"></div>
+    <script type="text/javascript">
+   function googleTranslateElementInit() {
+   new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+                }
+            </script>
+   
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <div style="width: 50%;" class="container">
+        <h1>Les planning</h1>
+        <hr class="divider bg-danger">
+        <div class="row justify-content-sm-center offset-top-66">
+            <div class="col-md-10 col-xl-12">
+                <div class="row">
+                   
+                    {% for plan in pagination %}<table >
+                        <tbody><td><tr>
+                    <div class="col-md-6 col-xl-3 offset-top-66 offset-xl-top-0">
+                        <!-- Box Member-->
+                        <div class="box-member"><img class="img-fluid" src={{asset('Front/images/plan.jpg')}} alt="" />
+                            <h5 class="font-weight-bold offset-top-20"><a href="">{{plan.nom}}
+                                 </a> <small>      {{plan.description}}  : <h6 style="color:rgb(139, 34, 34);">   {{plan.nbParticipant}} place est disponible!</h6> <h3 style="color:forestgreen;"><a href="{{path('reserve',{'id':plan.id })}}">Reserver</a></h3></small> </tr><tr><small class="text-danger">{{plan.nombre_de_seances}} seances</small></tr>
+                                </h5>
+                            <div class="box-member-caption">
+                                <div class="box-member-caption-inner">
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </td></tbody>
+                </table>
+                   
+                         </div>
+                    
+                </div></div> {% endfor %}
+                {% if pagination.getTotalItemCount > 1 %}
+                <div class="pagination">
+                    {{ knp_pagination_render(pagination) }}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+{% endblock  %}                                   
